@@ -1,0 +1,7 @@
+{
+    "require": {
+        "guzzlehttp/guzzle": "^6.4",
+        "koolreport/core": "^4.3",
+        "koolreport/laravel": "^1.7"
+    }
+}

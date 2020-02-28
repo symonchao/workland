@@ -1,0 +1,15 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', "gcr.io/workland-ca/$_BASENAME:$_IMAGE_TAG", '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', "gcr.io/workland-ca/$_BASENAME:$_IMAGE_TAG"]
+- name: 'gcr.io/cloud-builders/kubectl'
+  entrypoint: 'bash'
+  args: 
+    - '-c'
+    - /builder/kubectl.bash patch deployment -n $_BASENAME $_BASENAME -p "{\"spec\":{\"template\":{\"metadata\":{\"labels\":{\"date\":\"`date +'%s'`\"}}}}}"
+  env: 
+    - 'CLOUDSDK_COMPUTE_ZONE=$_CLUSTER_ZONE'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=$_CLUSTER_NAME'
+
+images: ["gcr.io/workland-ca/$_BASENAME:$_IMAGE_TAG"]

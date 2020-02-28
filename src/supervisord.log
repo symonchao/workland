@@ -1,0 +1,24 @@
+2020-02-12 21:03:27,387 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2020-02-12 21:03:27,390 INFO supervisord started with pid 8
+2020-02-12 21:03:28,392 INFO spawned: 'stdout' with pid 11
+2020-02-12 21:03:28,394 INFO spawned: 'apache2accesslog' with pid 12
+2020-02-12 21:03:28,396 INFO spawned: 'apache2' with pid 13
+2020-02-12 21:03:29,622 INFO success: stdout entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-02-12 21:03:29,622 INFO success: apache2accesslog entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-02-12 21:03:29,622 INFO success: apache2 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-02-12 21:11:34,299 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2020-02-12 21:11:34,302 INFO supervisord started with pid 8
+2020-02-12 21:11:35,305 INFO spawned: 'stdout' with pid 11
+2020-02-12 21:11:35,307 INFO spawned: 'apache2accesslog' with pid 12
+2020-02-12 21:11:35,309 INFO spawned: 'apache2' with pid 13
+2020-02-12 21:11:36,399 INFO success: stdout entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-02-12 21:11:36,399 INFO success: apache2accesslog entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-02-12 21:11:36,399 INFO success: apache2 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-02-26 16:21:46,744 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2020-02-26 16:21:47,850 INFO supervisord started with pid 8
+2020-02-26 16:21:48,852 INFO spawned: 'stdout' with pid 11
+2020-02-26 16:21:48,853 INFO spawned: 'apache2accesslog' with pid 12
+2020-02-26 16:21:48,854 INFO spawned: 'apache2' with pid 13
+2020-02-26 16:21:50,811 INFO success: stdout entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-02-26 16:21:50,811 INFO success: apache2accesslog entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-02-26 16:21:50,811 INFO success: apache2 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)

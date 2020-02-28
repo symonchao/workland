@@ -1,0 +1,54 @@
+version: "3"
+
+services:
+  localdb:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: dbname
+      MYSQL_USER: dbuser
+      MYSQL_PASSWORD: dbpass
+      MYSQL_ROOT_PASSWORD: dbrootpass
+    ports:
+      - '33060:3306'
+    expose:
+      - '33060'
+    volumes:
+      - my-db:/var/lib/mysql
+
+  reporting:
+    depends_on:
+      - localdb
+    image: gcr.io/workland-ca/reporting:latest
+    volumes:
+      - ./src:/var/www/html
+    ports:
+      - "8099:80"
+    restart: always
+    environment:
+      APP_NAME: reporting
+      APP_ENV: local
+#      APP_KEY: base64:3NULv5PWlxlw+g8Ta6ksEEY2BXXTlUSgjxuisbC8T54=
+      APP_URL: http://localhost:8099
+#      APP_DEBUG: "true"
+#      LOG_CHANNEL: stack
+      DB_CONNECTION: mysql
+      DB_HOST: localdb
+      DB_DATABASE: dbname
+      DB_USERNAME: dbuser
+      DB_PASSWORD: dbpass
+#      BROADCAST_DRIVER: log
+#      CACHE_DRIVER: file
+#      SESSION_DRIVER: file
+#      QUEUE_DRIVER: sync
+#      SHARED_URL: https://shared.workland.com
+#      ATLAS_UI_URL: http://localhost:8100
+#      RABBITMQ_HOST: 172.24.0.2
+#      RABBITMQ_PORT: 5672
+#      RABBITMQ_USERNAME: rabbit
+#      RABBITMQ_PASSWORD: somerabbit
+#      JWT_SECRET: 66bcrkLfaeu1IyoPA5Ydz6U73sCDtV4r
+#      INVITE_KEY_TTL: 604800
+
+volumes:
+  my-db:
